@@ -5,6 +5,7 @@ import './index.css'; // Import global CSS
 
 ReactDOM.render(
     <React.StrictMode>
+        
         <App />
     </React.StrictMode>,
     document.getElementById('root')
