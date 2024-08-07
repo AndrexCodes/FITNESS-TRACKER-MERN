@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import SessionsPage from './pages/SessionsPage/SessionsPage'; // Import SessionsPage
+import CartPage from './pages/CartPage/CartPage'; // Import CartPage
+import { CartProvider } from './context/CartContext'; // Import CartProvider
+import '@fortawesome/fontawesome-free/css/all.min.css'; // Import FontAwesome
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <CartProvider>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<SessionsPage />} /> {/* Route for sessions page */}
+                    <Route path="/cart" element={<CartPage />} /> {/* Route for cart page */}
+                </Routes>
+            </Router>
+        </CartProvider>
+    );
+};
 
 export default App;

@@ -1,0 +1,57 @@
+.sessions-page {
+    padding: 20px;
+    background: #f5f5f5;
+    min-height: 100vh;
+}
+
+.sessions-page h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.page-description {
+    text-align: center;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.view-cart-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #f57c00;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.view-cart-link .fa-shopping-cart {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.cart-text {
+    margin-right: 10px;
+}
+
+.cart-count {
+    background-color: #f57c00;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+.sessions-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Space between cards */
+}
+
+.session-card {
+    flex: 1 1 250px; 
+    max-width: 250px; /* Ensure cards don't exceed 250px */
+}
