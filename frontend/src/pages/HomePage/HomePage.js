@@ -1,7 +1,8 @@
 // src/pages/HomePage/HomePage.js
 
 import React, { useState, useEffect } from 'react';
-import UserProfileCard from '../components/UserProfileCard/UserProfileCard'; // We'll create this next
+import UserProfileCard from '../components/UserProfileCard/UserProfileCard';
+
 import axios from 'axios';
 
 const HomePage = () => {
