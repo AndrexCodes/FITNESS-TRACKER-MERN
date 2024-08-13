@@ -1,12 +1,14 @@
 // src/pages/HomePage/HomePage.js
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import FitnessCard from '../../components/FitnessCard/FitnessCard';
 import UserProfileCard from '../../components/UserProfileCard/UserProfileCard';
+import { UseAppContext } from '../../components/GlobalContext';
 import './HomePage.css';
 
 const HomePage = () => {
-    const user = {
+    const {token} = UseAppContext()
+    const [user, setUser] = useState({
         name: 'John Thariki',
         email: 'tharikijohn@gmail.com',
         age: 19,
@@ -15,7 +17,17 @@ const HomePage = () => {
             calories: 1500,
             workoutTime: '1h 30m',
         },
-    };
+    })
+    // const user = {
+    //     name: 'John Thariki',
+    //     email: 'tharikijohn@gmail.com',
+    //     age: 19,
+    //     stats: {
+    //         steps: 5000,
+    //         calories: 1500,
+    //         workoutTime: '1h 30m',
+    //     },
+    // };
 
     const fitnessCards = [
         {
@@ -61,6 +73,22 @@ const HomePage = () => {
     
         // Add more cards as needed
     ];
+
+    useEffect(()=>{
+        const payload = {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "auth": token
+            }
+        }
+        fetch("/api/userData")
+        .then((result)=>{
+            // setUser(result)
+        })
+    }, [])
+
+
 
     return (
         <div className="home-page">
