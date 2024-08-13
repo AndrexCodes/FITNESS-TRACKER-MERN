@@ -33,7 +33,7 @@ const userSchema = new mongoose.Schema({
     typed: Number,
     required: true
   }
-}, { timestamps: true });
+});
 
 const User = mongoose.model('User', userSchema);
 
