@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
+const coachSchema = new mongoose.Schema({
 
 
 name: {
@@ -20,3 +20,6 @@ name: {
   }
 
 })
+const Coach = mongoose.model('Coach', userSchema);
+
+module.exports = Coach;
