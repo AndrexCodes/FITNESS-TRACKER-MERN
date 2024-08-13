@@ -11,7 +11,7 @@ name: {
   email: {
     type: String,
     required: true,
-    unique: true,
+    unique: true,P
   },
   phone: {
     type: Number,
