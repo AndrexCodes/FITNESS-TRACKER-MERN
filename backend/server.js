@@ -5,10 +5,10 @@ const userRouter = require("./routes/userRoute")
 connectToDB()
 app = express()
 app.use(express.json());
-app.use("/api", userRouter)
+app.use("/api/user", userRouter)
 
 
-app.listen(1234, ()=>{
+app.listen("0.0.0.0", 1234, ()=>{
     console.log("server started at Port: 1234")
 })
 
