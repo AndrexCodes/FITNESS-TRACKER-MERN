@@ -26,14 +26,14 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   created: {
-    type: Number,
-    required: true
+    type: Date,
+    default: Date.now
   },
   updated: {
-    typed: Number,
-    required: true
+    type: Date,
+    default: Date.now
   }
-}, { timestamps: true });
+});
 
 const User = mongoose.model('User', userSchema);
 
