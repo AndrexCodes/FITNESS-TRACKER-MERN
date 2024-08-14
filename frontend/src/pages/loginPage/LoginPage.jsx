@@ -3,6 +3,7 @@ import "./LoginPage.css";
 import { FaUser, FaLock } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 
+
 const LoginPage = () => {
   const [action, setAction] = useState("login");
   const [name, setName] = useState("")
@@ -24,7 +25,7 @@ const LoginPage = () => {
       },
       body: JSON.stringify(userdata)
     })
-    .then(()=>{
+    .then((result)=>{
       
     })
   }
@@ -43,13 +44,13 @@ const LoginPage = () => {
         <form action="">
           <h1>Login</h1>
           <div className="input-box">
-            <input type="text" placeholder="Username" required />
+            <input type="text" value={name} onChange={(event)=>{setName(event.target.value)}} placeholder="Username" required />
 
             <FaUser className="icon" />
           </div>
 
           <div className="input-box">
-            <input type="password" placeholder="Password" required />
+            <input type="password" placeholder="Password" value={name} onChange={(event)=>{setName(event.target.value)}} required />
 
             <FaLock className="icon" />
           </div>
@@ -91,7 +92,7 @@ const LoginPage = () => {
           </div>
 
           <div className="input-box">
-            <input type="password" placeholder="Password" value={password} onChange={(event)=>{setEmail(event.target.value)}} required />
+            <input type="password" placeholder="Password" value={password} onChange={(event)=>{setPassword(event.target.value)}} required />
             <FaLock className="icon" />
           </div>
 

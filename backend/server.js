@@ -4,7 +4,12 @@ const userRouter = require("./routes/userRoute")
 
 connectToDB()
 app = express()
-app.use(userRouter)
+app.use(express.json());
+app.use("/api", userRouter)
+
+
+//app.use('/api/users', userRoutes);
+//app.use('/api/sessions', sessionRoutes);
 
 
 app.listen(1234, ()=>{
