@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import "./LoginPage.css";
 import { FaUser, FaLock } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
-
+import { UseAppContext } from "../../components/GlobalContext";
+import { RiNumbersFill } from "react-icons/ri";
 
 const LoginPage = () => {
+  const {setToken}= UseAppContext()
   const [action, setAction] = useState("login");
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -87,9 +89,17 @@ const LoginPage = () => {
           </div>
 
           <div className="input-box">
+            <input type="age" placeholder="Age"  value={age} onChange={(event)=>{setAge(event.target.value)}} required />
+            <RiNumbersFill  className="icon" />
+          </div>
+
+          <div className="input-box">
             <input type="email" placeholder="Email"  value={email} onChange={(event)=>{setEmail(event.target.value)}} required />
             <MdAlternateEmail className="icon" />
           </div>
+
+          
+          
 
           <div className="input-box">
             <input type="password" placeholder="Password" value={password} onChange={(event)=>{setPassword(event.target.value)}} required />
@@ -102,7 +112,7 @@ const LoginPage = () => {
             </label>
           </div>
 
-          <button type="submit">Register</button>
+          <button type="submit" onSubmit>Register</button>
 
           <div className="register-link">
             <p>
