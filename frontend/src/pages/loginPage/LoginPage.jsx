@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./loginPage.css";
+import "./LoginPage.css";
 import { FaUser, FaLock } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 import { UseAppContext } from "../../components/GlobalContext";
