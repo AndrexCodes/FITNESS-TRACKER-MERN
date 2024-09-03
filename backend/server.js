@@ -1,9 +1,21 @@
-const express = require("express")
-const connectToDB = require("./db_connection")
-const userRouter = require("./routes/userRoute")
+const express = require("express");
+const connectToDB = require("./db_connection");
+const userRouter = require("./routes/userRoute");
+const auth = require('./middleware/auth');
+const logger = require('./middleware/logger');
+const errorHandler = require('./middleware/errorHandler');
+const cors = require('cors'); // Import the CORS middleware
 
-connectToDB()
-app = express()
+// Connect to the database
+connectToDB();
+
+// Initialize the express application
+const app = express();
+
+// Enable CORS
+app.use(cors());
+
+// Middleware to parse JSON bodies
 app.use(express.json());
 
 // Use logger middleware for all routes
