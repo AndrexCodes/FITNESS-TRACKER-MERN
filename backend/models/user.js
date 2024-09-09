@@ -1,5 +1,3 @@
-//file to define the User schema:
-
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
@@ -15,26 +13,10 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-  },
-  phone: {
-    type: Number,
-    required: true,
-    unique: true
-  },
-  age: {
-    type: Number,
-    required: true,
-  },
-  created: {
-    type: Date,
-    default: Date.now
-  },
-  updated: {
-    type: Date,
-    default: Date.now
   }
 });
 
-const User = mongoose.model('User', userSchema);
+// Check if the model exists before creating it
+const User = mongoose.models.User || mongoose.model('User', userSchema);
 
 module.exports = User;
