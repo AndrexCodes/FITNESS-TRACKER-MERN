@@ -18,16 +18,7 @@ const HomePage = () => {
             workoutTime: '1h 30m',
         },
     })
-    // const user = {
-    //     name: 'John Thariki',
-    //     email: 'tharikijohn@gmail.com',
-    //     age: 19,
-    //     stats: {
-    //         steps: 5000,
-    //         calories: 1500,
-    //         workoutTime: '1h 30m',
-    //     },
-    // };
+    
 
     const fitnessCards = [
         {
